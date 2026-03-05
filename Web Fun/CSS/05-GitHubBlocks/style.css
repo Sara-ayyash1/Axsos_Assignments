@@ -7,18 +7,15 @@
   margin: 0px auto;
   width: 900px;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 h1,
 p {
   color: #404855;
   font-family: Arial;
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin: 0px 20px;
 }
 .row {
   display: flex;
