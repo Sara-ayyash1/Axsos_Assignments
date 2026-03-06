@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.row {
+  display: flex;
+  gap: 15px;
+  margin: 10px 0px;
+  color: #ffffff;
+}
+.col,.col-2,.col-3 {
+  background-color: #649ea0;
+  padding: 10px ;
+}
+.col {
+  flex: 1;
+}
+.col-2 {
+  flex: 2;
+}
+.col-3 {
+  flex: 3;
+}
