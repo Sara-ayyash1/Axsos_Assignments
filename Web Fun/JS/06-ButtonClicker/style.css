@@ -55,7 +55,7 @@ header {
   padding: 15px;
 }
 .mainCard:nth-of-type(1) {
-   margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .mainCard div:nth-child(2) {
   font-size: 15px;
@@ -63,8 +63,8 @@ header {
 .main-contant {
   width: 200px;
 }
-.main-contant p:nth-of-type(1){
-    margin: 4px 15px;
+.main-contant p:nth-of-type(1) {
+  margin: 4px 15px;
 }
 .likeBtn {
   background-color: #fed966;
