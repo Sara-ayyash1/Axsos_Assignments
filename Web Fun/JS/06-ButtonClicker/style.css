@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+header {
+  display: flex;
+  background-color: #cccccc;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 25px;
+  width: 80%;
+  margin: 0 auto;
+}
+.searchInput {
+  height: 25px;
+  border: 3px solid black;
+  padding: 5px;
+}
+.searchInput::placeholder {
+  color: #c3c3c3;
+}
+.loginBtn {
+  background-color: #2979e3;
+  color: #f2f9f9;
+  padding: 2px 8px;
+  font-size: 14px;
+  border: 3px solid black;
+  box-shadow: 2px 3px black;
+  cursor: pointer;
+}
+/*Header End*/
+.container {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  gap: 25px;
+}
+.main {
+  flex: 2;
+}
+.side {
+  flex: 1;
+  border: 3px solid black;
+  height: fit-content;
+  padding: 10px;
+}
+.mainCard {
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+}
+.mainCard:nth-of-type(1) {
+   margin-bottom: 20px;
+}
+.mainCard div:nth-child(2) {
+  font-size: 15px;
+}
+.main-contant {
+  width: 200px;
+}
+.main-contant p:nth-of-type(1){
+    margin: 4px 15px;
+}
+.likeBtn {
+  background-color: #fed966;
+  padding: 2px 8px;
+  border: 3px solid black;
+  box-shadow: 2px 3px black;
+  margin-top: 20px;
+}
+a {
+  color: #125798;
+}
+.definitionBtn {
+  background-color: #92c47d;
+  padding: 2px 20px;
+  display: block;
+  margin: 15px auto 5px;
+  border: 3px solid black;
+  box-shadow: 2px 3px black;
+}
+.side p {
+  font-size: 18px;
+  font-weight: 500;
+}
+span {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+}
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+  header {
+    width: fit-content;
+  }
+}
