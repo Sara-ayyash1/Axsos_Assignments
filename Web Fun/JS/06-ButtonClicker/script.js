@@ -1,11 +1,15 @@
-function LogOut(elem) {
-  elem.innerText = "Logout";
+function logOut(elem) {
+  if(elem.innerText === "Login"){
+   elem.innerText = "Logout";
+  }
+  else
+  elem.innerText = "Login";
 }
 
-function RemoveBtn(elem) {
+function removeBtn(elem) {
   elem.style.visibility="hidden";
 }
 
-function LikedAlert(){
+function likedAlert(){
     alert("Ninja was liked");
 }
