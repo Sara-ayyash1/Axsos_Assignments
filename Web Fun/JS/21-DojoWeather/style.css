@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+  background-color: #9fc5f8;
+  color: #ffffff;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0px;
+}
+.city-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+.city-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+}
+/* End Header*/
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0px 15px;
+}
+.temperatures {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.temperatures select {
+  border: 2.4px solid black;
+  padding: 2px 3px;
+  font-weight: 500;
+}
+.line {
+  background-color: black;
+  height: 2px;
+  margin-bottom: 15px;
+}
+p {
+  font-weight: 600;
+}
+.weather-cards {
+  display: flex;
+  gap: 25px;
+}
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #eeeeee;
+  padding: 15px 0px 30px;
+}
+img {
+  border-radius: 50%;
+  width: 100px;
+}
+.card h3 {
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+.low-temp {
+  color: #2c79e4;
+}
+.high-temp {
+  color: #cf2b28;
+  margin-right: 30px;
+}
+.low-temp,
+.high-temp {
+  font-weight: bolder;
+  font-size: 18px;
+}
+.cookies-banner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 3px;
+  gap: 5px;
+  background-color: #eeeeee;
+  padding: 5px 15px;
+  position: fixed;
+  bottom: 0;
+  width: 80%;
+  margin: 0 auto;
+}
+.cookies-banner button {
+  background-color: #9fc5f8;
+  padding: 5px 10px;
+  font-weight: bold;
+  border: 3px solid black;
+  box-shadow: 2px 2px black;
+}
+.cookies-banner p {
+  font-size: 14px;
+}
+.cookies-banner div {
+  width: 70%;
+}
+.cookies-banner img {
+  width: 50px;
+}
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 20px;
+  }
+  .city-links a {
+    font-size: 16px;
+  }
+  .weather-cards {
+    flex-direction: column;
+    width: 200px;
+    margin: 0 auto;
+  }
+  .cookies-banner p {
+    font-size: 12px;
+  }
+  .cookies-banner div {
+    width: 60%;
+  }
+}
+@media (min-width: 1400px) {
+  .weather-cards {
+    gap: 100px;
+  }
+}

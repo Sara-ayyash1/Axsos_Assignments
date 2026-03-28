@@ -21,3 +21,7 @@ function removeUser(userId) {
     
     requests.innerHTML--;  
 }
+
+function changeColor(elem){
+    elem.style.backgroundColor = "red";
+}
