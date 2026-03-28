@@ -1,11 +1,11 @@
-let displayNum = document.querySelector("#display");
+let displayVariable = document.querySelector("#display");
 let currentInput = "";
 let firstOperand = null;
 let operator = null;
 
 function press(num) {
   currentInput += num;
-  displayNum.innerHTML = currentInput;
+  displayVariable.innerHTML = currentInput;
 }
 
 function setOP(op) {
@@ -37,7 +37,7 @@ function calculate() {
       break;
   }
 
-  displayNum.innerHTML = result;
+  displayVariable.innerHTML = result;
   currentInput = result.toString();
   operator = null;
 }
@@ -46,5 +46,5 @@ function clr() {
   currentInput = "";
   firstOperand = null;
   operator = null;
-  displayNum.innerHTML = "0";
+  displayVariable.innerHTML = "0";
 }
