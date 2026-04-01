@@ -14,9 +14,7 @@ acceptBtn.addEventListener("click", function () {
 });
 
 selectTemp.addEventListener("change", function () {
-  let highTemps = document.querySelectorAll(".high-temp");
-  let lowTemps = document.querySelectorAll(".low-temp");
-  let allTemps = [...highTemps, ...lowTemps];
+  let allTemps = document.querySelectorAll(".high-temp,.low-temp");
 
   allTemps.forEach((t) => {
     let currentTempValue = parseInt(t.innerText);
