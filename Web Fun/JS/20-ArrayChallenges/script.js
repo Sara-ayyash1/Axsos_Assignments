@@ -64,21 +64,29 @@ console.log(result);
 // Array Reverse
 // Create a function that reverses the elements in an array and then returns the reversed array.
 
-function reverse(arr) {
-    let left = 0;
-    let right = arr.length - 1;
+// function reverse(arr) {
+//     let left = 0;
+//     let right = arr.length - 1;
     
-    while(left < right) {
-        let temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
+//     while(left < right) {
+//         let temp = arr[left];
+//         arr[left] = arr[right];
+//         arr[right] = temp;
         
-        left++;
-        right--;
-    }
-    return arr;
+//         left++;
+//         right--;
+//     }
+//     return arr;
+// }
+ function reverse(arr) {
+  let reversed = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversed.push(arr[i]);
+  }
+
+  return reversed;
 }
- 
+console.log("result");
 var result = reverse(["a", "b", "c", "d", "e"]);
 console.log(result);
 // let arr =["a", "b", "c", "d", "e"]
