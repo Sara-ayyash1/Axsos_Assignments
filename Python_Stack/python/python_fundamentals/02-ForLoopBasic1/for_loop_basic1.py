@@ -21,10 +21,10 @@ for i in range(0 , 500001 ,1):
     if i%2 !=0:
         total += i
 print(total)
+
 # 5)Countdown by Fours - Print positive numbers starting at 2018, counting down by fours.
 for i in range (2018 , 0 , -4):
     print(i)
-
 
 # 6)Flexible Counter - Set three variables: lowNum, highNum, mult. Starting at lowNum and going through highNum, print only the integers that are a multiple of mult. 
 lowNum = 2
