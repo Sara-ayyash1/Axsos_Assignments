@@ -17,12 +17,12 @@ class User:
             print(f"User: {self.name}, Balance: ${account.balance}")
         return self
 
-    def transfer_money(self,other_user,amount,account_index=0):
-        self.accounts[account_index].balance -=amount
-        other_user.accounts[account_index].balance +=amount
+    def transfer_money(self, amount, from_acc_index, other_user, to_acc_index):
+        self.make_withdrawal(amount, from_acc_index)
+        other_user.make_deposit(amount, to_acc_index)
         return self
     
-    def open_new_account(self, int_rate, balance):
+    def open_new_account(self, int_rate = 0.01, balance = 0):
         new_account = BankAccount(int_rate, balance)
         self.accounts.append(new_account)
         return self
@@ -57,11 +57,15 @@ class BankAccount:
 #Testing...
 
 sara = User("Sara Ayyash", "sara@gmail.com")
+sama = User("Sama", "sama@example.com")
 
-sara.open_new_account(int_rate=0.01, balance=100) 
-sara.open_new_account(int_rate=0.05, balance=1000) 
+sara.open_new_account(balance=100) 
+sara.open_new_account(balance=1000) 
+sama.open_new_account(0.01, 500)
 
 sara.make_deposit(500, 0)     
 sara.make_withdrawal(200, 1)  
+sara.transfer_money(300, 0, sama, 0)
 
 sara.display_user_balance()
+sama.display_user_balance()
