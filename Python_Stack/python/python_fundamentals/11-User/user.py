@@ -5,20 +5,16 @@ class User:
 
     def make_deposit(self , amount):
         self.balance += amount
-        return self
 
     def make_withdrawal(self , amount):
         self.balance -= amount
-        return self
 
     def display_user_balance(self):
         print(f"User: {self.name}, Balance: ${self.balance}")
-        return self
 
     def transfer_money(self,other_user,amount):
         self.balance -=amount
         other_user.balance +=amount
-        return self
     
 # Create 3 instances of the User class
 user1 = User ("Sara Ayyash" , 1000)
