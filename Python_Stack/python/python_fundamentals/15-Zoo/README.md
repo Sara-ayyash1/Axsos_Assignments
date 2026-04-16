@@ -1,5 +1,7 @@
 # Zoo Management System 
- An advanced, scalable zoo management simulator built with Python. This project demonstrates the power of Object-Oriented Programming (OOP) to manage complex relationships between different animal species efficiently.
+ An advanced, scalable zoo management simulator built with Python. 
+ 
+ This project demonstrates the power of Object-Oriented Programming (OOP) to manage complex relationships between different animal species efficiently.
 
 # 🏗️ Core Architecture :
 This project isn't just about animals; it's a showcase of clean code principles:
