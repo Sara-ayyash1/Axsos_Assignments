@@ -3,11 +3,11 @@
 
 # 🏗️ Core Architecture :
 This project isn't just about animals; it's a showcase of clean code principles:
-  Inheritance: All species (Lion, Tiger, Monkey, Bear) inherit from the base Animal class to avoid code repetition.
-  Polymorphism: The Zoo class interacts with all animals through a single interface (add_animal), regardless of their specific type.
-  Method Overriding: Specialized behaviors (like unique feeding requirements) are implemented by overriding parent methods.
+  **Inheritance:** All species (Lion, Tiger, Monkey, Bear) inherit from the base Animal class to avoid code repetition.
+  **Polymorphism:** The Zoo class interacts with all animals through a single interface (add_animal), regardless of their specific type.
+  **Method Overriding:** Specialized behaviors (like unique feeding requirements) are implemented by overriding parent methods.
 
-# 🛠️ Detailed Class Hierarchy1. 
+# 🛠️ Detailed Class Hierarchy 
  **1. Animal (The Parent)**
   Attributes: name, age, health_level, happiness_level.
   Methods: display_info() (universal reporting), feed() (basic stat boost).
@@ -24,9 +24,9 @@ This project isn't just about animals; it's a showcase of clean code principles:
   Logic: Centralized management for adding animals and batch-printing reports.
 
 # 💡 Technical Highlights
- Dynamic Type Detection: Uses self.__class__.__name__ to identify species during runtime.
- Super()Integration: Properly handles parent initialization to ensure data integrity.
- Output Formatting: Uses f-string padding (e.g., {name:10}) for clean, tabular console output.
+ **Dynamic Type Detection:** Uses self.__class__.__name__ to identify species during runtime.
+ **Super()Integration:**Properly handles parent initialization to ensure data integrity.
+ **Output Formatting:** Uses f-string padding (e.g., {name:10}) for clean, tabular console output.
 
 # 🚀 Getting Started
 Prerequisites => Python 3.x installed.
