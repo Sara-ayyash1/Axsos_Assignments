@@ -3,8 +3,10 @@
 
 # 🏗️ Core Architecture :
 This project isn't just about animals; it's a showcase of clean code principles:
-  **Inheritance:** All species (Lion, Tiger, Monkey, Bear) inherit from the base Animal class to avoid code repetition.
+  **Inheritance:** All species (Lion, Tiger, Monkey, Bear) inherit from the base Animal class to avoid code repetition. 
+
   **Polymorphism:** The Zoo class interacts with all animals through a single interface (add_animal), regardless of their specific type.
+
   **Method Overriding:** Specialized behaviors (like unique feeding requirements) are implemented by overriding parent methods.
 
 # 🛠️ Detailed Class Hierarchy 
@@ -25,7 +27,9 @@ This project isn't just about animals; it's a showcase of clean code principles:
 
 # 💡 Technical Highlights
  **Dynamic Type Detection:** Uses self.__class__.__name__ to identify species during runtime.
+
  **Super()Integration:**Properly handles parent initialization to ensure data integrity.
+ 
  **Output Formatting:** Uses f-string padding (e.g., {name:10}) for clean, tabular console output.
 
 # 🚀 Getting Started
