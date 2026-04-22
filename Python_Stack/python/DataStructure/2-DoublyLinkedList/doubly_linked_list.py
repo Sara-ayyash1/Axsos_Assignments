@@ -1,4 +1,16 @@
-class Node:  
+# Add a new node to the end of the list,
+# delete an existing node,
+# and insert a node between existing nodes (e.g., before a given value, at a particular index, etc.)
+# You should have two classes for this: DoublyLinkedList and Node. 
+# DoublyLinkedList should be the class that allows you to add a new node, delete an existing node, 
+# insert a new node between existing nodes, and print out the values in the linked list. 
+
+
+# How would you know if you have a circular linked list?
+# How would you get to the middle of the linked list?
+# How would you remove duplicate values from the list?
+# How would you reverse the values in the list?
+class Node:
     def __init__(self, data):        
         self.data = data
         self.prev = None
