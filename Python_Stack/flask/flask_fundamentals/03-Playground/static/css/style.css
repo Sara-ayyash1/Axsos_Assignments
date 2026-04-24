@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px auto;;
+}
+.boxes{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+}
