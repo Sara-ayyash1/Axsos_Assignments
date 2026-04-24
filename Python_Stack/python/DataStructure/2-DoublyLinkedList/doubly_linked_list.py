@@ -1,69 +1,164 @@
-# Add a new node to the end of the list,
-# delete an existing node,
-# and insert a node between existing nodes (e.g., before a given value, at a particular index, etc.)
-# You should have two classes for this: DoublyLinkedList and Node. 
-# DoublyLinkedList should be the class that allows you to add a new node, delete an existing node, 
-# insert a new node between existing nodes, and print out the values in the linked list. 
-
-
-# How would you know if you have a circular linked list?
-# How would you get to the middle of the linked list?
-# How would you remove duplicate values from the list?
-# How would you reverse the values in the list?
 class Node:
     def __init__(self, data):        
         self.data = data
         self.prev = None
         self.next = None
 
-class DoublyLinkedList:
+
+class DoublyLinkedList():
     def __init__(self):
         self.head = None
 
-    # Method to add a node at the end of the DLL
-    def append(self, data):
-        new_node = Node(data)
-        if self.head is None:  # If the list is empty
+    #1. Insert at Head
+    def insert_at_beginning(self , val):
+        new_node = Node(val)
+        if self.head is None: # If the list is empty
             self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+    
+    #2. Insert at the end
+    def append(self , val):
+        new_node = Node(val)
+        if self.head is None: # If the list is empty
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:  # Traverse to the last node
+                current = current.next
+            new_node.prev = current
+            current.next = new_node
+
+    #3. Insert a node between existing nodes (before a given value)
+    def insert_before_value(self, target_val, value):
+        if self.head is None:
+            return "List is empty"
+
+        current = self.head
+        while current:
+            if current.data == target_val:
+                new_node = Node(value)
+                new_node.next = current
+                new_node.prev = current.prev
+                
+                if current.prev:
+                    current.prev.next = new_node
+                else:
+                    self.head = new_node
+                
+                current.prev = new_node
+                return
+            
+            current = current.next
+        return "Value Not Found"
+
+    #4. Insert a node between existing nodes (at a particular index)
+    def insert_at_index(self ,value , index):
+        if index == 0 :
+            self.insert_at_beginning(value)
             return
-        temp = self.head
-        while temp.next:  # Traverse to the last node
-            temp = temp.next
-        temp.next = new_node
-        new_node.prev = temp
+        
+        count = 0
+        current = self.head
+        new_node = Node(value)
+        while current :
+            if count ==  index - 1:
+                if current.next is not None:
+                    current.next.prev  = new_node
+
+                new_node.next = current.next
+                new_node.prev = current
+                current.next = new_node
+                return
+                        
+            count +=1
+            current = current.next
+        return "Index Not Found"
+                          
+    #5. Delete an existing node
+    def remove_val(self, val):
+        if self.head is None:
+            return "List is empty"
+
+        current = self.head
+        while current:
+            if current.data == val:
+                if current == self.head:
+                    self.head = current.next
+                    if self.head: 
+                        self.head.prev = None
+                    return val
+                
+                if current.next: 
+                    current.next.prev = current.prev
+                
+                if current.prev: 
+                    current.prev.next = current.next
+                
+                return val
+            current = current.next
+        
+        return "Value not found"
 
     # Forward traversal (head to tail)
     def traverse_forward(self):
-        temp = self.head
-        while temp:
-            print(temp.data, end=" -> ")
-            temp = temp.next
+        current = self.head
+        while current:
+            print (f"{current.data}", "-> ")
+            current = current.next
         print("None")
-        
+
     # Backward traversal (tail to head)
     def traverse_backward(self):
-        temp = self.head
-        if not temp:
+        current = self.head
+        if current is None:
             print("List is empty!")
             return
-        # Move to the tail of the list
-        while temp.next:
-            temp = temp.next
-        # Traverse backward from tail to head
-        while temp:
-            print(temp.data, end=" -> ")
-            temp = temp.prev
+        # Move to the end of the list
+        while current.next:
+            current = current.next
+        # Traverse backward from end to head
+        while current:
+            print (f"{current.data}", "-> ")
+            current = current.prev
         print("None")
+
+    #reverse the values in the list
+    def reverse(self):
+        temp = None
+        current = self.head
+        while current:
+            temp = current.prev
+            current.prev = current.next
+            current.next = temp
+
+            current = current.prev
+        
+        if temp:
+            self.head = temp.prev
+
 
 # Example usage
 dll = DoublyLinkedList()
+dll.insert_at_beginning(5)
+dll.insert_at_beginning(0)
 dll.append(10)
 dll.append(20)
 dll.append(30)
+dll.insert_at_index(15,3)
+dll.insert_before_value(30,25)
 
+dll.remove_val(10)
+#dll.reverse()
 
 print("Forward Traversal:")
 dll.traverse_forward()
 
 print("Backward Traversal:")
 dll.traverse_backward()
+
+
+# How would you get to the middle of the linked list?
+# How would you remove duplicate values from the list?
