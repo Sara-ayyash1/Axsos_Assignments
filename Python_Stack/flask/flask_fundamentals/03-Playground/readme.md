@@ -55,20 +55,22 @@ Customize the boxes via the URL:
 /play/6/red
 /play/4/tomato
 /play/3/FFA500
----
+```
 
-## URL Parameters
+### URL Parameters
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | `nums_of_boxes` | `3` | Number of boxes to display |
 | `color` | `9FC5F8` (light blue) | Background color of the boxes |
 
----
 
-## How It Works
+
+### How It Works
 
 - Flask receives the URL parameters and passes them to the HTML template
 - Jinja2 loops through the number of boxes using a `{% for %}` loop
 - Each box gets its background color set via inline `style` attribute
 - The boxes are laid out using Flexbox with wrapping for responsive display
+
+```
