@@ -4,6 +4,22 @@ A dynamic checkerboard generator built with Flask. Customize the grid size and c
 
 ---
 
+## Screenshots
+
+**Default 8x8 board** — `127.0.0.1:5000`
+
+![Default 8x8](screenshot_default.png)
+
+**4x4 board** — `127.0.0.1:5000/4/4`
+
+![4x4 board](screenshot_4x4.png)
+
+**6x6 Red & Black** — `127.0.0.1:5000/6/6/red/black`
+
+![Red and Black](screenshot_red_black.png)
+
+---
+
 ## Project Structure
 
 ```
@@ -55,8 +71,7 @@ You can customize the board via the URL:
 
 ```
 /8/8/red/blue
-/10/10/darkgreen/lightyellow
-/8/8/556B2F/FFFFE0
+/10/10/green/yellow
 ```
 
 ## URL Parameters
