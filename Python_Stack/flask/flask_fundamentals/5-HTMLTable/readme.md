@@ -10,11 +10,12 @@ A Flask app that passes a list of dictionaries from Python to an HTML template a
 html_table/
 │
 ├── app.py
-└── templates/
-    └── index.html
+├── templates/
+│   └── index.html
+└── static/
+    └── css/
+        └── style.css
 ```
-
-> No `static/` folder needed — Foundation is loaded via CDN!
 
 ---
 
@@ -106,16 +107,9 @@ Foundation is loaded via **CDN** — no files to download:
 
 | Class | What it does |
 |-------|-------------|
-| `bg-light-gray` | Light gray background on the page |
 | `padding-vertical-3` | Adds padding to top and bottom of the page |
 | `grid-container` | Centers the content and sets a max-width |
 | `text-center` | Centers the heading text |
 | `margin-bottom-2` | Adds spacing below the heading |
 | `hover` | Highlights a row when you hover over it |
 | `striped` | Alternates row background colors (zebra style) |
-
-### Why Foundation?
-
-- No CSS file needed — just add the CDN link and start using classes
-- Mobile-first — looks good on all screen sizes automatically
-- Clean and professional default styles with minimal effort
