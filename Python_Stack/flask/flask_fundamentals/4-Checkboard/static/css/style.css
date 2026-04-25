@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #f3f1f1;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    border: 2px solid rgb(93, 92, 92);
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+}
