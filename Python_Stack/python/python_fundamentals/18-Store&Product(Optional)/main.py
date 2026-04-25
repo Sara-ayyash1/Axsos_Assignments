@@ -37,3 +37,5 @@ if __name__ == "__main__":
     my_store.set_clearance("Clothing", 50)
     for product in my_store.products:
         product.print_info()
+
+     
