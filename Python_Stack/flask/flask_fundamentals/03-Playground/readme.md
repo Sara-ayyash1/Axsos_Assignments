@@ -72,5 +72,3 @@ Customize the boxes via the URL:
 - Jinja2 loops through the number of boxes using a `{% for %}` loop
 - Each box gets its background color set via inline `style` attribute
 - The boxes are laid out using Flexbox with wrapping for responsive display
-
-```
