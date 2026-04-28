@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dojo Survey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      input[type="radio"]:checked + label {
+        background-color: #0f766e;
+        color: white;
+        border-color: #0f766e;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-50 min-h-screen flex items-center justify-center py-12 px-4">
+    <div class="bg-white w-full max-w-lg rounded-2xl shadow-sm border border-stone-200 p-10">
+      <div class="mb-8">
+        <p
+          class="text-xs  text-teal-600 uppercase font-medium mb-2">
+          Coding Bootcamp
+        </p>
+        <h1 class="text-4xl text-stone-800">Dojo Survey</h1>
+        <div class="w-12 h-0.5 bg-teal-500 mt-3"></div>
+      </div>
+
+      <form action="/result" method="post" class="space-y-6">
+        <div>
+          <label
+            class="block text-xs font-medium tracking-widest text-stone-400 uppercase mb-2">Your Name</label>
+          <input
+            type="text" name="name" placeholder="Enter your full name"
+            class="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-700 text-sm focus:outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100 transition"/>
+        </div>
+
+        <div>
+          <label
+            class="block text-xs font-medium tracking-widest text-stone-400 uppercase mb-2">Dojo Location</label>
+          <select name="location"
+            class="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-700 text-sm focus:outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100 transition bg-white">
+            <option value="" disabled selected>Select a location</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Chicago">Chicago</option>
+            <option value="New York">New York</option>
+          </select>
+        </div>
+
+        <div>
+          <label
+            class="block text-xs font-medium tracking-widest text-stone-400 uppercase mb-2">Favorite Language</label>
+          <select
+            name="language"
+            class="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-700 text-sm focus:outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100 transition bg-white">
+            <option value="" disabled selected>Select a language</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="Ruby">Ruby</option>
+          </select>
+        </div>
+
+        <div>
+          <label
+            class="block text-xs font-medium tracking-widest text-stone-400 uppercase mb-3">Experience Level</label>
+          <div class="grid grid-cols-4 gap-2">
+            <div>
+              <input type="radio" name="level" id="beginner" value="Beginner" />
+              <label
+                for="beginner"
+                class="block text-center text-xs py-2.5 border border-stone-200 rounded-xl text-stone-500 cursor-pointer hover:border-teal-300 transition"
+                >Beginner</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="level"
+                id="intermediate"
+                value="Intermediate"/>
+              <label
+                for="intermediate"
+                class="block text-center text-xs py-2.5 border border-stone-200 rounded-xl text-stone-500 cursor-pointer hover:border-teal-300 transition"
+                >Mid</label>
+            </div>
+            <div>
+              <input type="radio" name="level" id="advanced" value="Advanced" />
+              <label
+                for="advanced"
+                class="block text-center text-xs py-2.5 border border-stone-200 rounded-xl text-stone-500 cursor-pointer hover:border-teal-300 transition"
+                >Advanced</label>
+            </div>
+            <div>
+              <input type="radio" name="level" id="ninja" value="Ninja" />
+              <label
+                for="ninja"
+                class="block text-center text-xs py-2.5 border border-stone-200 rounded-xl text-stone-500 cursor-pointer hover:border-teal-300 transition"
+                >Ninja</label>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium tracking-widest text-stone-400 uppercase mb-2">Comment
+            <span class="normal-case tracking-normal text-stone-300">(optional)</span>
+          </label>
+          <textarea
+            name="comment"
+            rows="3"
+            placeholder="Any thoughts..."
+            class="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-700 text-sm focus:outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100 transition "
+          ></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium text-sm tracking-widest uppercase py-3.5 rounded-xl transition">
+          Submit Survey
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

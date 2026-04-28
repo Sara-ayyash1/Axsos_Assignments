@@ -12,4 +12,3 @@ def play(nums_of_boxes = 3 , color = "#9FC5F8"):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
