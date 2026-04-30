@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-10 w-full max-w-sm">
+      <!-- Header -->
+      <h1 class="text-2xl text-center font-semibold text-gray-800 mb-1">Counter</h1>
+      <p class="text-lg text-gray-500 mb-8">{{ session['visits'] }} visits </p>
+
+      <!-- Count Display -->
+      <div class="bg-gray-50 rounded-xl py-8 text-center mb-8">
+        <p class="text-6xl font-bold text-gray-800 tabular-nums">{{ session['count'] }}</p>
+        <p class="text-sm text-gray-400 mt-2">total count</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex gap-3 mb-4">
+        <a href="/increment_count_2" class="flex-1">
+          <button class="w-full bg-gray-800 hover:bg-gray-700 active:scale-95 text-white text-sm font-medium py-2.5 rounded-lg transition-all">
+            Add 2
+          </button>
+        </a>
+        <a href="/reset" class="flex-1">
+          <button class="w-full border border-gray-200 hover:bg-gray-50 active:scale-95 text-gray-600 text-sm font-medium py-2.5 rounded-lg transition-all">
+            Reset
+          </button>
+        </a>
+      </div>
+
+      <!-- Custom Increment -->
+      <form action="/custom_increment" method="POST" class="mb-4">
+        <div class="flex gap-2">
+          <input type="number" name="amount"
+            placeholder="Custom amount"
+            class="flex-1 border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300"/>
+          <button type="submit"
+            class="bg-gray-800 hover:bg-gray-700 active:scale-95 text-white text-sm font-medium px-4 rounded-lg transition-all" >
+            Add
+          </button>
+        </div>
+      </form>
+
+      <!-- Destroy Session -->
+      <a href="/destroy_session">
+       <button class="w-full text-sm text-white bg-red-500 rounded-lg hover:text-red-400 transition-colors py-2">
+          Clear session
+        </button>
+      </a>
+
+    </div>
+
+  </body>
+</html>
