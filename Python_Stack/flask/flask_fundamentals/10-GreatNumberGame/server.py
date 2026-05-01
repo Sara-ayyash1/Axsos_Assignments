@@ -4,6 +4,16 @@ import random
 app = Flask(__name__)
 app.secret_key = 'keep_it_secret_keep_it_safe' 
 
+def get_message_style(message):
+    if 'high' in message:
+        return {'bg': 'bg-red-50 border-red-100', 'text': 'text-red-600'}
+    elif 'low' in message:
+        return {'bg': 'bg-blue-50 border-blue-100', 'text': 'text-blue-600'}
+    elif 'Correct' in message :
+        return {'bg': 'bg-green-50 border-green-100', 'text': 'text-green-700'}
+    else:
+        return {'bg': 'bg-gray-50 border-gray-100', 'text': 'text-gray-600'}
+    
 @app.route('/')
 def index():
     # Only set the target number if it doesn't exist yet
@@ -12,7 +22,9 @@ def index():
         session['attempts'] = 0
         session['message'] = None
         session['game_over'] = False
-    return render_template('index.html')
+
+    style = get_message_style(session['message']) if session.get('message') else None
+    return render_template('index.html', style=style)
 
 #Create a route that determines whether the number submitted is too high, too low, or correct. Show this status on the HTML page.
 @app.route('/process', methods=['POST'])
@@ -29,15 +41,13 @@ def process():
         session['message'] = "Too low!"
 
     else:
-        session['message'] = f"{session['answer']} was the number!"
+        session['message'] = f"Correct, {session['answer']} was the number!"
         session['game_over'] = True
         return redirect('/')
 
     if session['attempts'] >= 5:
         session['message'] = 'You Lose! Game Over'
         session['game_over'] = True
-        return redirect('/')
-
 
     return redirect('/')
 
@@ -45,6 +55,22 @@ def process():
 def reset():
     session.clear() 
     return redirect('/')
+
+
+winners = []
+
+@app.route('/submit_winner', methods=['POST'])
+def submit_winner():
+    name = request.form['name']
+    attempts = session['attempts']
+    winners.append({'name': name, 'attempts': attempts})
+    session.clear()
+    return redirect('/leaderboard')
+
+@app.route('/leaderboard')
+def leaderboard():
+    sorted_winners = sorted(winners, key=lambda x: x['attempts'])
+    return render_template('leaderboard.html', winners=sorted_winners)
 
 if __name__ == "__main__":
     app.run(debug=True)
