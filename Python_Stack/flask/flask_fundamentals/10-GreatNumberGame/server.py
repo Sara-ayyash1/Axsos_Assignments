@@ -69,8 +69,8 @@ def submit_winner():
 
 @app.route('/leaderboard')
 def leaderboard():
-    sorted_winners = sorted(winners, key=lambda x: x['attempts'])
-    return render_template('leaderboard.html', winners=sorted_winners)
+    winners_list = sorted(winners, key=lambda x: x['attempts'])
+    return render_template('leaderboard.html', winners=winners_list)
 
 if __name__ == "__main__":
     app.run(debug=True)
