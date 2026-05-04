@@ -45,12 +45,8 @@ Entity Relationship Diagram for a Yelp-like food review application built with M
 
 ##  How to Open Locally
 
-1. Download MySQL Workbench from [mysql.com/products/workbench](https://www.mysql.com/products/workbench/)
-2. Clone this repo
-   ```
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   ```
-3. Open MySQL Workbench
-4. Go to **File → Open Model**
-5. Select the `Food_Reviews_ERD.mwb` file
-6. Click **Add Diagram** to view the ERD
+1. Download MySQL Workbench from [mysql.com/products/workbench](https://www.mysql.com/products/workbench/) ```
+2. Open MySQL Workbench
+3. Go to **File → Open Model**
+4. Select the `Food_Reviews_ERD.mwb` file
+5. Click **Add Diagram** to view the ERD
