@@ -1,4 +1,4 @@
-# 🥷 Ninja Gold
+# Ninja Gold
 
 A Flask mini-game where a ninja travels across different locations to earn (or lose) gold.
 
@@ -40,10 +40,10 @@ Then open your browser at: `http://localhost:5000`
 
 | Building | Min | Max | Notes |
 |----------|-----|-----|-------|
-| 🌾 Farm  | +10 | +20 | Always earns |
-| ⛏️ Cave  | +5  | +10 | Always earns |
-| 🏠 House | +2  | +5  | Always earns |
-| 🎰 Casino| -50 | +50 | Can earn **or** lose! |
+|  Farm  | +10 | +20 | Always earns |
+|  Cave  | +5  | +10 | Always earns |
+|  House | +2  | +5  | Always earns |
+|  Casino| -50 | +50 | Can earn **or** lose! |
 
 ---
 
