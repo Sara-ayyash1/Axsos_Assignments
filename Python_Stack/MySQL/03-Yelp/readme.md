@@ -1,9 +1,15 @@
 # Yelp - Food Reviews ERD
 
-## Description
-Entity Relationship Diagram for a Yelp-like food review application built with MySQL Workbench.
+##  Description
+Entity Relationship Diagram for a Yelp-like food review application built with MySQL Workbench. The goal was to analyze a UI wireframe and transform it into a structured database schema with proper relationships between Users, Restaurants, and Reviews.
 
-## Tables
+##  Key Concepts
+- **Requirement Analysis:** Identifying core entities from the wireframe (Users, Restaurants, Reviews).
+- **One-to-Many Relationships:** A user can write many reviews, and a restaurant can have many reviews.
+- **Normalization:** Data is distributed across tables to avoid redundancy.
+- **Naming Conventions:** Using clear and consistent column names with foreign keys referencing their parent tables.
+
+##  Tables
 
 ### users
 | Column | Type | Notes |
@@ -17,9 +23,9 @@ Entity Relationship Diagram for a Yelp-like food review application built with M
 ### restaurants
 | Column | Type | Notes |
 |--------|------|-------|
-| restaurant_ID | INT | Primary Key |
+| restaurant_id | INT | Primary Key |
 | name | VARCHAR(100) | |
-| adress | VARCHAR(300) | |
+| address | VARCHAR(300) | |
 | photo_url | VARCHAR(500) | |
 
 ### reviews
@@ -30,9 +36,14 @@ Entity Relationship Diagram for a Yelp-like food review application built with M
 | content | TEXT | |
 | created_at | DATETIME | |
 | user_id | INT | Foreign Key → users |
-| restaurants_restaurant_ID | INT | Foreign Key → restaurants |
+| restaurant_id | INT | Foreign Key → restaurants |
 
-## How to Open Locally
+##  Relationships
+- A **user** can write many **reviews** (one-to-many)
+- A **restaurant** can have many **reviews** (one-to-many)
+- A **review** belongs to one user and one restaurant
+
+##  How to Open Locally
 
 1. Download MySQL Workbench from [mysql.com/products/workbench](https://www.mysql.com/products/workbench/)
 2. Clone this repo
@@ -43,8 +54,3 @@ Entity Relationship Diagram for a Yelp-like food review application built with M
 4. Go to **File → Open Model**
 5. Select the `Food_Reviews_ERD.mwb` file
 6. Click **Add Diagram** to view the ERD
-
-## Relationships
-- A **user** can write many **reviews** (one-to-many)
-- A **restaurant** can have many **reviews** (one-to-many)
-- A **review** belongs to one user and one restaurant
