@@ -5,6 +5,27 @@ from time import gmtime, strftime
 def index(request):
     context = {
         #"time": strftime("%Y-%m-%d %H:%M %p", gmtime())
-        "time": strftime("%b %d, %Y %I:%M %p", gmtime())
+        #"time": strftime("%b %d, %Y %I:%M %p", gmtime()),
+        "time": strftime("%A, %d %b %Y %H:%M:%S", gmtime())
     }
     return render(request,'index.html', context)
+
+
+#---------------------------
+
+# from datetime import datetime
+# date_string = "Jun 1 2005  1:33PM"
+
+# strptime => String Parse Time
+# date_object = datetime.strptime(date_string, "%b %d %Y %I:%M%p")
+
+# print(date_object)
+
+#---------------------------
+
+# %b: اسم الشهر المختصر (مثل: Jun, Jan, Feb).
+# %d: اليوم بالشهر كرقمن (01 أو 1).
+# %Y: السنة بأربع أرقام (2005).
+# %I: الساعة بنظام 12 ساعة (من 01 لـ 12).
+# %M: الدقائق (من 00 لـ 59).
+# %p: مؤشر الوقت (AM أو PM).
