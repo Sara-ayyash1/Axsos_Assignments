@@ -24,7 +24,7 @@ A Django web app that tracks page visits and manages a session-based counter.
 ## Setup
 
 ```bash
-git clone https://github.com/Sara-ayyash1/counter-app
+git clone https://github.com/Sara-ayyash1/counter-project
 cd counter-app
 python manage.py migrate
 python manage.py runserver
