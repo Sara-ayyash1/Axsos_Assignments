@@ -2,13 +2,47 @@ from django.shortcuts import render
 from time import gmtime, strftime
 # Create your views here.
     
+# def index(request):
+#     context = {
+#         #"time": strftime("%Y-%m-%d %H:%M %p", gmtime())
+#         #"time": strftime("%b %d, %Y %I:%M %p", gmtime()),
+#         "time": strftime("%A, %d %b %Y %H:%M:%S", gmtime())
+#     }
+#     return render(request,'index.html', context)
+
+#---------------------------
+
+# from datetime import datetime  
+# def index(request):
+#     now = datetime.now()
+#     current_time = now.strftime("%b %d, %Y %I:%M %p")
+    
+#     context = {
+#         "time": current_time
+#     }
+#     return render(request, 'index.html', context)
+
+
+
+#---------------------------
+
+from django.utils import timezone  
+
 def index(request):
+    local_time = timezone.now()
+    
     context = {
-        #"time": strftime("%Y-%m-%d %H:%M %p", gmtime())
-        #"time": strftime("%b %d, %Y %I:%M %p", gmtime()),
-        "time": strftime("%A, %d %b %Y %H:%M:%S", gmtime())
+        "time": local_time.strftime("%b %d, %Y %I:%M %p")
     }
-    return render(request,'index.html', context)
+    return render(request, 'index.html', context)
+
+
+
+
+
+
+
+
 
 
 #---------------------------
