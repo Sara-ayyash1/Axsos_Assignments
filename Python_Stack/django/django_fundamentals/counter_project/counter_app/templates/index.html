@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center p-8">
+
+  <div class="bg-white rounded-2xl p-10 w-full max-w-sm shadow-sm border border-gray-100">
+
+    <p class="text-xs uppercase tracking-widest text-gray-600 mb-2 ">Counter</p>
+    <p class="text-8xl font-bold text-gray-900 leading-none mb-3">{{request.session.counter}}</p>
+    <span class="inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 text-sm text-gray-500">
+      <span class="w-2 h-2 rounded-full bg-green-600 inline-block"></span>
+      {{request.session.visit}} visits
+    </span>
+
+    <hr class="my-7 border-gray-100">
+
+    <p class="text-xs uppercase tracking-widest text-gray-600 mb-3">actions</p>
+    <div class="flex gap-3">
+      <a href="/increment_count_2" class="flex-1 text-center py-3 bg-gray-900 text-white rounded-xl text-base font-bold hover:bg-gray-700 transition">+2</a>
+      <a href="/destroy_session" class="flex-1 text-center py-3 bg-red-50 text-red-500 border border-red-200 rounded-xl text-base font-medium hover:bg-red-100 transition">Reset</a>
+    </div>
+
+    <hr class="my-7 border-gray-100">
+
+    <p class="text-xs uppercase tracking-widest text-gray-600 mb-3">Custom increment</p>
+    <form action="/increment_by" method="post" class="flex gap-3">
+      {% csrf_token %}
+      <input name="amount" type="number" placeholder="Amount" min="1" required
+        class="flex-1 px-4 py-3 border border-gray-200 rounded-xl text-base text-gray-900 bg-gray-50 focus:outline-none focus:border-gray-600">
+      <button type="submit" class="px-5 py-3 bg-indigo-500 text-white rounded-xl text-base font-bold hover:bg-indigo-600 transition">Add</button>
+    </form>
+
+  </div>
+
+</body>
+</html>
