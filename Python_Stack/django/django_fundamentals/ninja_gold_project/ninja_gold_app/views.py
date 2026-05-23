@@ -12,13 +12,13 @@ def index(request):
 
 BUILDINGS = {
     "farm":   {"min": 10,  "max": 20},
-    "cave":   {"min": 5,   "max": 10},
-    "house":  {"min": 2,   "max": 5},
+    "cave":   {"min": 10,   "max": 20},
+    "house":  {"min": 10,   "max": 20},
     "quest": {"min": -50, "max": 50},
 }
 
-def process_money(request):
-    building = request.POST.get("building")
+def process_money(request, building):
+    #building = request.POST.get("building")
   
     b = BUILDINGS[building]
     amount = random.randint(b["min"], b["max"])  
@@ -34,7 +34,7 @@ def process_money(request):
         color = "red"
     activities = request.session.get("activities", [])
     activities.insert(0, {"msg": msg, "color": color})
-    request.session[''] = activities
+    request.session['activities'] = activities
     request.session.modified = True
     return redirect("/")
 
