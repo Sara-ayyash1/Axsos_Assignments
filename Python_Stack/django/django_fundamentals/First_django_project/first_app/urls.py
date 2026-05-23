@@ -9,12 +9,11 @@ from . import views # the dot means the views file is in the same directory as t
 # ]
 
 urlpatterns = [
-    path('', views.root),
-    path('blogs' , views.index),
-    path('blogs/new' , views.new),
-    path('blogs/create' , views.create),
-    path('blogs/<int:number>' , views.show),
-    path('blogs/<int:number>/edit' , views.edit),
-    path('blogs/<int:number>/delete' , views.destroy),
-    path('blogs/json' , views.blog_json),
+    path('', views.index),
+    path('new' , views.new),
+    path('create' , views.create),
+    path('<int:number>' , views.show),
+    path('<int:number>/edit' , views.edit),
+    path('<int:number>/delete' , views.destroy),
+    path('json' , views.blog_json),
 ]
