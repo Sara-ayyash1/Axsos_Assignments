@@ -71,12 +71,13 @@ def submit_winner(request):
         request.session['winners'] = current_winners
         request.session.modified = True
 
-        del request.session['answer']
+        if 'answer' in request.session:
+            del request.session['answer']
         request.session['attempts'] = 0
         request.session['message'] = None
         request.session['game_over'] = False
         
-        return redirect('/leaderboard/')
+        return redirect('/leaderboard')
     return redirect('/')
 
 def leaderboard(request):
