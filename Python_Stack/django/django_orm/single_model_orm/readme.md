@@ -37,7 +37,7 @@ single_model_orm/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the repo
 
@@ -79,7 +79,7 @@ Then open your browser at: **http://localhost:8000**
 
 ---
 
-## 🔗 URL Routes
+##  URL Routes
 
 | URL | View | Description |
 |-----|------|-------------|
@@ -88,7 +88,7 @@ Then open your browser at: **http://localhost:8000**
 
 ---
 
-## 🗃️ User Model
+##  User Model
 
 ```python
 class User(models.Model):
