@@ -1,0 +1,170 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports ORM I</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 40px; background-color: #f9f9f9; }
+        h3 { color: #2c3e50; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        ul { list-style-type: dotted; padding-left: 20px; }
+        li { margin-bottom: 5px; }
+        .empty { color: #7f8c8d; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <h1>Sports ORM I Results</h1>
+
+    <h3>all baseball leagues</h3>
+    <ul>
+        {% for league in baseball_leagues %}
+            <li>{{ league.name }} ({{ league.sport }})</li>
+        {% empty %}
+            <li class="empty">No baseball leagues found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all women's leagues</h3>
+    <ul>
+        {% for league in womens_leagues %}
+            <li>{{ league.name }}</li>
+        {% empty %}
+            <li class="empty">No women's leagues found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all leagues where sport is any hockey</h3>
+    <ul>
+        {% for league in hockey_leagues %}
+            <li>{{ league.name }} - {{ league.sport }}</li>
+        {% empty %}
+            <li class="empty">No hockey leagues found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all leagues where sport is something OTHER THAN football</h3>
+    <ul>
+        {% for league in not_football %}
+            <li>{{ league.name }} ({{ league.sport }})</li>
+        {% empty %}
+            <li class="empty">No leagues found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all leagues that call themselves "conferences."</h3>
+    <ul>
+        {% for league in conferences %}
+            <li>{{ league.name }}</li>
+        {% empty %}
+            <li class="empty">No conferences found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all leagues in the Atlantic region</h3>
+    <ul>
+        {% for league in atlantic_leagues %}
+            <li>{{ league.name }}</li>
+        {% empty %}
+            <li class="empty">No Atlantic leagues found.</li>
+        {% endfor %}
+    </ul>
+
+
+    <hr>
+
+    <h3>all teams based in Dallas</h3>
+    <ul>
+        {% for team in dallas_teams %}
+            <li>{{ team.location }} {{ team.team_name }}</li>
+        {% empty %}
+            <li class="empty">No teams in Dallas found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all teams named the Raptors</h3>
+    <ul>
+        {% for team in raptors %}
+            <li>{{ team.location }} {{ team.team_name }}</li>
+        {% empty %}
+            <li class="empty">No teams named Raptors found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all teams whose location includes "City."</h3>
+    <ul>
+        {% for team in city_teams %}
+            <li>{{ team.location }} {{ team.team_name }}</li>
+        {% empty %}
+            <li class="empty">No teams with "City" in location found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all teams whose names begin with "T."</h3>
+    <ul>
+        {% for team in t_teams %}
+            <li>{{ team.location }} {{ team.team_name }}</li>
+        {% empty %}
+            <li class="empty">No teams starting with "T" found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all teams, ordered alphabetically by location</h3>
+    <ul>
+        {% for team in ordered_teams_loc %}
+            <li><strong>{{ team.location }}</strong> {{ team.team_name }}</li>
+        {% empty %}
+            <li class="empty">No teams found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all teams, ordered by team name in reverse alphabetical order</h3>
+    <ul>
+        {% for team in ordered_teams_name_rev %}
+            <li>{{ team.location }} <strong>{{ team.team_name }}</strong></li>
+        {% empty %}
+            <li class="empty">No teams found.</li>
+        {% endfor %}
+    </ul>
+
+
+    <hr>
+
+    <h3>every player with the last name "Cooper."</h3>
+    <ul>
+        {% for player in cooper_players %}
+            <li>{{ player.first_name }} {{ player.last_name }}</li>
+        {% empty %}
+            <li class="empty">No players named Cooper found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>every player with the first name "Joshua."</h3>
+    <ul>
+        {% for player in joshua_players %}
+            <li>{{ player.first_name }} {{ player.last_name }}</li>
+        {% empty %}
+            <li class="empty">No players named Joshua found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>every player with the last name "Cooper" EXCEPT those with "Joshua" as the first name</h3>
+    <ul>
+        {% for player in cooper_not_joshua %}
+            <li>{{ player.first_name }} {{ player.last_name }}</li>
+        {% empty %}
+            <li class="empty">No players found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>all players with the first name "Alexander" OR first name "Wyatt."</h3>
+    <ul>
+        {% for player in alex_or_wyatt %}
+            <li>{{ player.first_name }} {{ player.last_name }}</li>
+        {% empty %}
+            <li class="empty">No players found.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
