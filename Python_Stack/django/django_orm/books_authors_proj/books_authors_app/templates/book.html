@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Add a Book</h1>
+            <form action="/add_book" method="post">
+                {% csrf_token %}
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title">
+                <label for="desc">Description</label>
+                <textarea name="desc" id="desc"></textarea>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Title</td>
+                        <td>Action</td>
+                        <td>Delete</td>
+                        <td>Update</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{book.id}}</td>
+                            <td>{{book.title}}</td>
+                            <td><a href="/book_detail/{{book.id}}">View</a> </td>
+                            <td><a class="delete" href="/delete_book/{{book.id}}">delete</a></td>
+                           <td><a class="update" href="/edit_book/{{book.id}}">update</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
