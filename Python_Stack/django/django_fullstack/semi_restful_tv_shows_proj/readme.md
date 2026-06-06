@@ -54,7 +54,7 @@ This project implements a semi-RESTful architecture using Django, allowing users
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone <https://github.com/Sara-ayyash1/Axsos_Assignments/tree/master/Python_Stack/django/django_fullstack/semi_restful_tv_shows_proj>
 cd semi-restful-tv-shows
 
 # 2. Create and activate a virtual environment
