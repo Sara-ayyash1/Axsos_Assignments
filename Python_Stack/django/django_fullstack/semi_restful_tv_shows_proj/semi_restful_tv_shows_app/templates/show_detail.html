@@ -10,7 +10,12 @@
 <body>
     <a href="/shows">Go Back</a>
     <h2>TV Show #{{show.id}}</h2>
-    
+
+    {% if messages %}  
+        {% for message in messages %}  
+            <p class="{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
     <p><strong>Title:</strong> {{show.title}}</p>
     <p><strong>Network:</strong> {{show.network}}</p>
     <p><strong>Release Date:</strong> {{show.release_date|date:'m-d-Y'}}</p>    <!-- date:'F d, Y' -->

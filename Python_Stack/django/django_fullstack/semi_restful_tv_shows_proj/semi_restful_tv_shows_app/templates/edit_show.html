@@ -10,7 +10,11 @@
 <body>
     <a href="/shows">Go Back</a>
     <h2>Edit Show {{show.id}}</h2>
-    
+    {% if messages %}  
+    {% for message in messages %}  
+        <p class="{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
     <form action="/shows/{{show.id}}/update/" method="POST">
         {% csrf_token %}
         

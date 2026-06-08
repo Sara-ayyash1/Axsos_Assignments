@@ -118,3 +118,6 @@ p strong {
     display: inline-block;
     width: 120px; 
 }
+
+.error { color: red; }
+.success { color: green; }
