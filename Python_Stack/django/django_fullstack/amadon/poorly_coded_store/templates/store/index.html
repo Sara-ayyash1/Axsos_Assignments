@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amadon Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans antialiased">
+
+    <div class="container mx-auto max-w-4xl px-4 py-12">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-2">Amadon Store</h1>
+            <p class="text-gray-500">Choose your favorite items and complete your purchase securely.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-950 text-gray-100 text-sm font-semibold uppercase tracking-wider">
+                        <th class="py-4 px-6">Item Name</th>
+                        <th class="py-4 px-6">Price</th>
+                        <th class="py-4 px-6 text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 text-gray-700">
+                    {% for product in all_products %}
+                    <tr class="hover:bg-gray-50 transition duration-150">
+                        <td class="py-4 px-6 font-medium text-gray-900">{{ product.description }}</td>
+                        
+                        <td class="py-4 px-6 font-semibold text-gray-600">${{ product.price }}</td>
+                        
+                        <td class="py-4 px-6">
+                            <form action="/buy/" method="post" class="flex items-center justify-center space-x-3">
+                                {% csrf_token %}
+                                <input type="hidden" name="product_id" value="{{ product.id }}">
+                                
+                                <div class="relative">
+                                    <select name="quantity" class="appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2 pr-8 font-medium">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold py-2 px-5 rounded-lg shadow-sm transition duration-150 transform active:scale-95 text-sm">
+                                    Buy!
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

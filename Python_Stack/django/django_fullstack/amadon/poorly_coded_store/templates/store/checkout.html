@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amadon Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded-xl shadow-md text-center max-w-md w-full border border-gray-200">
+        
+        <h2 class="text-2xl font-bold text-green-600 mb-6">Thank you for your business!</h2>
+        
+        <p class="text-lg text-gray-750 mb-4">
+            We charged your credit card for 
+            <span class="font-extrabold text-red-650">${{ request.session.last_charge|stringformat:".2f" }}</span>
+        </p>
+        
+        <hr class="my-4 border-gray-300">
+        
+        <div class="space-y-2 text-gray-600">
+            <p>You have ordered <span class="font-bold text-gray-800">{{ request.session.total_items }}</span> items so far</p>
+            <p>and spent <span class="font-bold text-gray-800">${{ request.session.total_spent|stringformat:".2f" }}</span> with Amadon.com!</p>
+        </div>
+        
+        <div class="flex justify-between items-center mt-6 space-x-4">
+            <a href="/" class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200 block text-center text-sm">
+                Go Back & Shop
+            </a>
+            <a href="/clear/" class="w-1/2 border border-gray-350 text-gray-600 hover:bg-gray-50 font-medium py-2 px-4 rounded-md transition duration-200 block text-center text-sm">
+                Clear History
+            </a>
+        </div>
+    </div>
+</body>
+</html>
