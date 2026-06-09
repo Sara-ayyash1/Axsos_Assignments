@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Comment</title>
+</head>
+<body>
+    <header>
+        <h1>Courses App</h1>
+    </header>
+
+    <div class="container">
+       {% if messages %}
+            {% for message in messages %}
+                <p class="msg {{message.tags}}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <h2 class="section-title">Add a comment to {{course.name}}</h2>
+        <form class="card form-group" action="{% url 'create_comment' course.id %}" method="post">
+            {% csrf_token %}
+            <label for="content">Content</label>
+            <textarea name="content" id="content"></textarea>
+            <input class="btn btn-primary" type="submit" value="Add Comment">
+        </form>
+
+        <h2 class="section-title">All comments for {{course.name}}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Comment</th>
+                    <th>Date updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in all_comments %}
+                    <tr>
+                        <td>{{comment.id}}</td>
+                        <td>{{comment.content}}</td>
+                        <td>{{comment.updated_at | date:"M d Y g:iA"}}</td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="3">No comments yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

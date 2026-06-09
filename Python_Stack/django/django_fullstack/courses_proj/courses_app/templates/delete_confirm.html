@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <title>Delete Course</title>
+</head>
+<body>
+    <header>
+        <h1>Courses App</h1>
+    </header>
+
+    <div class="container">
+        <div class="delete-card">
+
+            <div class="delete-top">
+                <div class="delete-icon">
+                    <i class="ti ti-alert-triangle"></i>
+                </div>
+                <h2>Delete course?</h2>
+                <p>This action cannot be undone.</p>
+            </div>
+
+            <div class="delete-body">
+                <div class="info-row">
+                    <span class="info-label">Name</span>
+                    <span class="info-value">{{ course.name }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Description</span>
+                    <span class="info-value">{{ course.description.content }}</span>
+                </div>
+            </div>
+
+            <div class="delete-footer">
+                <form action="{% url 'destroy_course' course.id %}" method="post">
+                    {% csrf_token %}
+                    <a href="/" class="btn btn-secondary">No, go back</a>
+                    <input class="btn btn-danger" type="submit" value="Yes, delete it">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

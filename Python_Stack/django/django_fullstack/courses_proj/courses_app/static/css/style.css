@@ -1,0 +1,395 @@
+/* ===== Base Reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* .section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #3C3489;
+    margin-bottom: 1rem;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #3C3489;
+    display: inline-block;
+} */
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3C3489;
+    border-left: 4px solid #3C3489;
+    padding-left: 12px;
+    margin-bottom: 1rem;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #3C3489;
+    color: #fff;
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* ===== Card ===== */
+.card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card h2 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    color: #222;
+}
+
+/* ===== Form ===== */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.2s;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #3C3489;
+    box-shadow: 0 0 0 3px rgba(60, 52, 137, 0.1);
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.btn:hover {
+    background: #f0f0f0;
+}
+
+.btn-primary {
+    background: #3C3489;
+    color: #fff;
+    border-color: #3C3489;
+}
+
+.btn-primary:hover {
+    background: #26215C;
+    border-color: #26215C;
+}
+
+.btn-danger {
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #fca5a5;
+}
+
+.btn-danger:hover {
+    background: #fecaca;
+}
+
+.btn-secondary {
+    background: #f5f5f5;
+    color: #444;
+    border-color: #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e8e8e8;
+}
+
+/* ===== Messages ===== */
+.messages {
+    margin-bottom: 1rem;
+}
+
+.msg {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.msg.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.msg.success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.msg.warning {
+    background: #fef9c3;
+    color: #854d0e;
+    border: 1px solid #fde047;
+}
+
+/* ===== Table ===== */
+table {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead tr {
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #3C3489;
+    color: #fff;
+}
+
+th {
+    color: #fff;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    /* color: #888; */
+    padding: 8px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+td, th {
+    border: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f5f4ff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tbody tr:hover td {
+    background-color: #ebe9ff;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #fafafa;
+}
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #fafafa;
+} */
+
+/* ===== Action Links ===== */
+a.link-action {
+    font-size: 13px;
+    color: #2563eb;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a.link-action:hover {
+    text-decoration: underline;
+}
+
+a.link-danger {
+    font-size: 13px;
+    color: #dc2626;
+    text-decoration: none;
+}
+
+a.link-danger:hover {
+    text-decoration: underline;
+}
+/* ===== Delete Confirm ===== */
+.delete-card {
+    max-width: 420px;
+    margin: 4rem auto;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.delete-top {
+    background: #3C3489;
+    padding: 1.75rem;
+    text-align: center;
+}
+
+.delete-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.2);
+    border: 2px solid #dc2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.delete-icon i {
+    font-size: 26px;
+    color: #f87171;
+}
+
+.delete-top h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.delete-top p {
+    font-size: 12px;
+    color: #a5b4fc;
+}
+
+.delete-body {
+    padding: 1.25rem 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #888;
+    min-width: 90px;
+}
+
+.info-value {
+    color: #222;
+    font-weight: 500;
+}
+
+.delete-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.delete-footer form {
+    display: flex;
+    gap: 8px;
+}
+
+.delete-footer .btn {
+    flex: 1;
+    text-align: center;
+}

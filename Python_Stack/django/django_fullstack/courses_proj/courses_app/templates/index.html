@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Courses</title>
+</head>
+<body>
+    <header>
+    <h1>Courses App</h1>
+   </header>
+
+   <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <p class="msg {{message.tags}}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+      <h2 class="section-title">Add a new  course</h2>
+
+        <form class="card form-group" action="/courses/add_course/" method="post">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+
+            <label for="description">Description</label>
+            <textarea  name="description" id="description"></textarea>
+
+            <input class="btn btn-primary" type="submit" value="Add">
+        </form>
+
+        <h2 class="section-title">Courses</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for course in courses %}
+                    <tr>
+                        <td>{{course.name}}</td>
+                        <td>{{course.description.content}}</td>
+                    <td>{{ course.created_at | date:"M d Y g:iA" }}</td>
+                        <td><a class="link-danger" href="/courses/destroy/{{course.id}}/">remove</a> | <a class="link-action"  href="{% url 'new_comment' course.id %}">Comment</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+   </div>
+</body>
+</html>
