@@ -94,7 +94,7 @@ courses_app/
 
 ### 1. Clone the repository
 ```bash
-git clone <repo-url>
+git clone <https://github.com/Sara-ayyash1/Axsos_Assignments/tree/master/Python_Stack/django/django_fullstack/courses_proj>
 cd courses_app
 ```
 
