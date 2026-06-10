@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Order, Product
+import bcrypt
 
 def index(request):
     context = {
